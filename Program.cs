@@ -6,6 +6,7 @@ namespace ClassesandMethods
     {
         public static void Main(string[] args)
         {
+            
             /* Here we're utilizing the static void version of the AddTwoNumbers method.  
              * This doesn't require us to instantiate a class this single instance is always available to use.
             */
@@ -16,7 +17,7 @@ namespace ClassesandMethods
             /* Here we're using the non static version were we return a int value from the 
              * method and assing it to a new int variable called resultOne, etc..
              */
-            Program instance1 = new Program();
+           // Program instance1 = new Program();
 
             int resultOne = instance1.AddTwoNumbers(1, 2);
             int resultTwo = instance1.AddTwoNumbers(3, 4);
@@ -26,7 +27,7 @@ namespace ClassesandMethods
              */
             Program instance2 = new Program();
             instance2.AddTwoNumbers(3,4);
-
+            
 
 
 
@@ -38,6 +39,7 @@ namespace ClassesandMethods
             /*To make the use here more dramatic, you can see it's available prior to creating the instances 
              * of Stanley and George
              */
+             
             Dog.Bark();
 
             Dog Stanley = new Dog("Stanley", 1);
