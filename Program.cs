@@ -52,6 +52,16 @@ namespace ClassesandMethods
             George.GetName();
 
             Console.WriteLine();
+            
+
+            //Creating a new instance of Hayden and assigning each variable a value
+            Hayden hayden = new Hayden("Hayden Barnes", 27, "Golf and Woodworking");
+
+            Hayden.GetInfo();// Gathers info from the new instance above to print to the console
+            Hayden.MyGoals();// is witin a static method to maintain integrity across the program
+            Hayden.AppIdea();// is witin a static method to maintain integrity across the program
+
+
         }
 
         public static void AddTwoNumbersVoid(int a, int b)
@@ -97,6 +107,42 @@ namespace ClassesandMethods
         public void GetName()
         {
             Console.WriteLine(Name);
+        }
+    }
+    /*
+     * Author of this class is Hayden Barnes (MSSA FBG9)
+     */
+    class Hayden
+    {
+        static string Name;
+        static int Age;
+        static string Hobbies;
+        //public string Goals;
+        //public string ProjectIdea;
+
+        public Hayden(string name, int age, string hobbies)
+        {
+            Name = name;
+            Age = age;
+            Hobbies = hobbies;
+        }
+        public static void MyGoals()//declared static to keep the goal the same whenever called
+        {
+            Console.WriteLine("1) To always provide the best for my daughter and wife.\n2)Gain employment" +
+                " with a company that has meanigful work.\n3) Be debt free in 2 years (minus a mortgage).");
+        }
+        public static void AppIdea()//declared static to keep the goal the same whenever called
+        {
+            Console.WriteLine("An uber like app but for renting tools fyou may need for a certain" +
+                " project but do not want to buy to complete a project.");
+            // If any of you have some insight on how to create this sort of application or to choose a new one
+            // to insure I am not in over my head. Thank you.
+        }
+        public static void GetInfo()
+        {
+            Console.WriteLine(Name);
+            Console.WriteLine(Age);
+            Console.WriteLine(Hobbies);
         }
     }
 }
