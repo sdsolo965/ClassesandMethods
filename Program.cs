@@ -6,6 +6,7 @@ namespace ClassesandMethods
     {
         public static void Main(string[] args)
         {
+            
             /* Here we're utilizing the static void version of the AddTwoNumbers method.  
              * This doesn't require us to instantiate a class this single instance is always available to use.
             */
@@ -16,7 +17,7 @@ namespace ClassesandMethods
             /* Here we're using the non static version were we return a int value from the 
              * method and assing it to a new int variable called resultOne, etc..
              */
-            Program instance1 = new Program();
+           // Program instance1 = new Program();
 
             int resultOne = instance1.AddTwoNumbers(1, 2);
             int resultTwo = instance1.AddTwoNumbers(3, 4);
@@ -26,7 +27,7 @@ namespace ClassesandMethods
              */
             Program instance2 = new Program();
             instance2.AddTwoNumbers(3,4);
-
+            
 
 
 
@@ -38,6 +39,7 @@ namespace ClassesandMethods
             /*To make the use here more dramatic, you can see it's available prior to creating the instances 
              * of Stanley and George
              */
+             
             Dog.Bark();
 
             Dog Stanley = new Dog("Stanley", 1);
@@ -50,6 +52,16 @@ namespace ClassesandMethods
             George.GetName();
 
             Console.WriteLine();
+            
+
+            //Creating a new instance of Hayden and assigning each variable a value
+            Hayden hayden = new Hayden("Hayden Barnes", 27, "Golf and Woodworking");
+
+            Hayden.GetInfo();// Gathers info from the new instance above to print to the console
+            Hayden.MyGoals();// is witin a static method to maintain integrity across the program
+            Hayden.AppIdea();// is witin a static method to maintain integrity across the program
+
+
         }
 
         public static void AddTwoNumbersVoid(int a, int b)
@@ -95,6 +107,42 @@ namespace ClassesandMethods
         public void GetName()
         {
             Console.WriteLine(Name);
+        }
+    }
+    /*
+     * Author of this class is Hayden Barnes (MSSA FBG9)
+     */
+    class Hayden
+    {
+        static string Name;
+        static int Age;
+        static string Hobbies;
+        //public string Goals;
+        //public string ProjectIdea;
+
+        public Hayden(string name, int age, string hobbies)
+        {
+            Name = name;
+            Age = age;
+            Hobbies = hobbies;
+        }
+        public static void MyGoals()//declared static to keep the goal the same whenever called
+        {
+            Console.WriteLine("1) To always provide the best for my daughter and wife.\n2)Gain employment" +
+                " with a company that has meanigful work.\n3) Be debt free in 2 years (minus a mortgage).");
+        }
+        public static void AppIdea()//declared static to keep the goal the same whenever called
+        {
+            Console.WriteLine("An uber like app but for renting tools fyou may need for a certain" +
+                " project but do not want to buy to complete a project.");
+            // If any of you have some insight on how to create this sort of application or to choose a new one
+            // to insure I am not in over my head. Thank you.
+        }
+        public static void GetInfo()
+        {
+            Console.WriteLine(Name);
+            Console.WriteLine(Age);
+            Console.WriteLine(Hobbies);
         }
     }
 }
