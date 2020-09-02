@@ -96,6 +96,11 @@ namespace ClassesandMethods
         {
             Console.WriteLine(Name);
         }
+
+        public void Walk()
+        {
+            System.Console.WriteLine("Walking");
+        }
     }
 }
 
